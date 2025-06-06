@@ -1,6 +1,6 @@
-# Angular + C# WebAPI + SQL Server Application
+# Angular + C# WebAPI + Microsost Sql Server
 
-This project is a **full-stack web application** built using:
+
 
 - **Frontend**: Angular (TypeScript)
 - **Backend**: ASP.NET Core Web API (C#)
