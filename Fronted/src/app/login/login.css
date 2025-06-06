@@ -1,0 +1,132 @@
+/* Animated gradient background */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #ff6ec4, #7873f5, #4ade80, #00c9ff);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.login-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  width: 350px;
+  text-align: center;
+  position: relative;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.4s ease;
+  background: #fdfdfd;
+}
+
+input:focus {
+  outline: none;
+  border-color: #7873f5;
+  box-shadow: 0 0 10px #7873f5, 0 0 15px #c084fc;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-image: linear-gradient(45deg, #ff6ec4, #7873f5);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+button::after {
+  content: '';
+  background: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  transform: skewX(-20deg);
+  transition: 0.5s;
+}
+
+button:hover::after {
+  left: 125%;
+}
+
+button:hover {
+  background-image: linear-gradient(45deg, #7873f5, #ff6ec4);
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  animation: fadeIn 0.5s ease-out;
+  font-weight: 600;
+}
+
+.success {
+  background: #e1fbe1;
+  color: #2e7d32;
+  border-left: 6px solid #4ade80;
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+}
+
+.error {
+  background: #ffe1e1;
+  color: #c62828;
+  border-left: 6px solid #f87171;
+  box-shadow: 0 4px 10px rgba(244, 67, 54, 0.3);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
